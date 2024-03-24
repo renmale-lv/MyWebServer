@@ -235,8 +235,8 @@ bool HttpRequest::UserVerify(const std::string &name, const std::string &pwd, bo
     LOG_INFO("Verify name:%s pwd:%s", name.c_str(), pwd.c_str());
     MYSQL *sql;
     // 连接数据库
-    SqlConnRAII(&sql, SqlConnPool::Instance());
-    // SqlConnRAII sqlraii(&sql, SqlConnPool::Instance());
+    // SqlConnRAII(&sql, SqlConnPool::Instance());
+    SqlConnRAII sqlraii(&sql, SqlConnPool::Instance());
     assert(sql);
 
     bool flag = false;
