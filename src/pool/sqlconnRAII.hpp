@@ -1,3 +1,7 @@
+/*
+ * @Author: lvxr
+ * @LastEditTime: 2024-03-24 21:57:05
+ */
 #ifndef SQLCONNRAII_HPP
 #define SQLCONNRAII_HPP
 
@@ -23,6 +27,7 @@ public:
     {
         if (sql_)
             connpool_->FreeConn(sql_);
+        // std::cout<<"free"<<std::endl;
     }
 
 private:
